@@ -78,3 +78,4 @@ But very useful! This is read when you log out of a session and is very good for
 ## Bonus tips
 
 - vscode settings path on macOS: `cd ~/Library/Application\ Support/Code/User`
+- see `.zshenv`for useful zsh commands (aliases)
