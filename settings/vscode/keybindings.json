@@ -1,0 +1,157 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+	{
+		"key": "cmd+k",
+		"command": "editor.action.addCommentLine",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "cmd+k cmd+c",
+		"command": "-editor.action.addCommentLine",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "cmd+l",
+		"command": "editor.action.removeCommentLine",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "cmd+k cmd+u",
+		"command": "-editor.action.removeCommentLine",
+		"when": "editorTextFocus && !editorReadonly"
+	},
+	{
+		"key": "cmd+down",
+		"command": "-workbench.action.terminal.scrollToNextCommand",
+		"when": "terminalFocus && terminalHasBeenCreated && !accessibilityModeEnabled || terminalFocus && terminalProcessSupported && !accessibilityModeEnabled"
+	},
+	{
+		"key": "cmd+up",
+		"command": "-workbench.action.terminal.scrollToPreviousCommand",
+		"when": "terminalFocus && terminalHasBeenCreated && !accessibilityModeEnabled || terminalFocus && terminalProcessSupported && !accessibilityModeEnabled"
+	},
+	{
+		"key": "cmd+down",
+		"command": "-cursorBottom",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "cmd+up",
+		"command": "-list.collapse",
+		"when": "listFocus && treeElementCanCollapse && !inputFocus || listFocus && treeElementHasParent && !inputFocus"
+	},
+	{
+		"key": "cmd+left",
+		"command": "-list.collapseAll",
+		"when": "listFocus && !inputFocus"
+	},
+	{
+		"key": "cmd+down",
+		"command": "-list.scrollDown",
+		"when": "listFocus && !inputFocus"
+	},
+	{
+		"key": "cmd+up",
+		"command": "-list.scrollUp",
+		"when": "listFocus && !inputFocus"
+	},
+	{
+		"key": "cmd+down",
+		"command": "-list.select",
+		"when": "listFocus && !inputFocus"
+	},
+	{
+		"key": "alt+cmd",
+		"command": "notifications.focusFirstToast",
+		"when": "notificationFocus && notificationToastsVisible"
+	},
+	{
+		"key": "home",
+		"command": "-notifications.focusFirstToast",
+		"when": "notificationFocus && notificationToastsVisible"
+	},
+	{
+		"key": "cmd+s",
+		"command": "saveAll"
+	},
+	{
+		"key": "alt+cmd+s",
+		"command": "-saveAll"
+	},
+	{
+		"key": "cmd+s",
+		"command": "workbench.action.files.save"
+	},
+	{
+		"key": "cmd+s",
+		"command": "-workbench.action.files.save"
+	},
+	{
+		"key": "cmd+m",
+		"command": "workbench.action.toggleZenMode",
+		"when": "!isAuxiliaryWindowFocusedContext"
+	},
+	{
+		"key": "cmd+k z",
+		"command": "-workbench.action.toggleZenMode",
+		"when": "!isAuxiliaryWindowFocusedContext"
+	},
+	{
+		"key": "ctrl+k",
+		"command": "-deleteAllRight",
+		"when": "textInputFocus && !editorReadonly"
+	},
+	{
+		"key": "ctrl+l",
+		"command": "-workbench.action.chat.newChat",
+		"when": "chatIsEnabled && inChat && chatLocation != 'editing-session'"
+	},
+	{
+		"key": "ctrl+l",
+		"command": "-workbench.action.chat.newEditSession",
+		"when": "chatEditingParticipantRegistered && chatIsEnabled && inChat && chatLocation == 'editing-session'"
+	},
+	{
+		"key": "ctrl+l",
+		"command": "-notebook.centerActiveCell",
+		"when": "notebookEditorFocused"
+	},
+	{
+		"key": "cmd+e",
+		"command": "workbench.action.splitEditor"
+	},
+	{
+		"key": "ctrl+shift+alt+cmd+7",
+		"command": "-workbench.action.splitEditor"
+	},
+	{
+		"key": "cmd+t",
+		"command": "workbench.action.terminal.toggleTerminal",
+		"when": "terminal.active"
+	},
+	{
+		"key": "ctrl+shift+[Equal]",
+		"command": "-workbench.action.terminal.toggleTerminal",
+		"when": "terminal.active"
+	},
+	{
+		"key": "cmd+r",
+		"command": "editor.action.goToReferences",
+		"when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+	},
+	{
+		"key": "shift+f12",
+		"command": "-editor.action.goToReferences",
+		"when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+	},
+	{
+		"key": "cmd+left",
+		"command": "cursorHome",
+		"when": "textInputFocus"
+	},
+	{
+		"key": "cmd+left",
+		"command": "-cursorHome",
+		"when": "textInputFocus"
+	}
+]

@@ -1,0 +1,334 @@
+{
+	// general
+	"zenMode.centerLayout": false,
+	"zenMode.hideActivityBar": false,
+	"workbench.startupEditor": "newUntitledFile",
+	"workbench.editor.enablePreview": false,
+	"workbench.settings.editor": "json",
+	"workbench.sideBar.location": "right",
+	"workbench.panel.defaultLocation": "bottom",
+	"workbench.editor.highlightModifiedTabs": true,
+	"workbench.editor.pinnedTabSizing": "shrink",
+	"workbench.editor.revealIfOpen": true,
+	"workbench.editor.tabSizing": "fit",
+	"workbench.editor.wrapTabs": true,
+	"workbench.layoutControl.enabled": false,
+	"workbench.settings.openDefaultKeybindings": true,
+	"workbench.settings.openDefaultSettings": true,
+	"workbench.settings.useSplitJSON": true,
+	"explorer.sortOrder": "type",
+	"explorer.compactFolders": false,
+	"explorer.copyRelativePathSeparator": "/",
+	"explorer.fileNesting.enabled": true,
+	"explorer.fileNesting.patterns": {
+		"*.js": "${capture}.d.ts, ${capture}.d.ts.map, ${capture}.js.map, ${capture}.min.js, ${capture}.test.d.ts.map",
+		"*.mjs": "${capture}.d.mts, ${capture}.d.mts.map, ${capture}.mjs.map",
+		"*.mts": "${capture}.d.mts, ${capture}.d.mts.map, ${capture}.mjs, ${capture}.mjs.map",
+		"*.ts": "${capture}.test.ts, ${capture}.test.ts.map, ${capture}.js",
+		".env": ".env.*",
+		".env.*": ".env.${capture}.local",
+		"compose.yaml": "compose.override.yaml, *.compose.yaml, *.compose.override.yaml",
+		"minepkg.toml": ".minepkg-lock.toml",
+		"mix.exs": "mix.lock",
+		"package.json": "bun.lockb, package-lock.json, pnpm-lock.yaml, yarn.lock",
+		"tailwind.config.cjs": "tailwind.*.cjs, tailwind.*.json",
+		"tsconfig.json": "tsconfig.*.json, tsconfig.tsbuildinfo",
+		"tsconfig.tsbuildinfo": "tsconfig.*.tsbuildinfo"
+	},
+	"explorer.incrementalNaming": "smart",
+	"files.associations": {
+		"*.appxmanifest": "xml",
+		"*.ash": "shellscript",
+		"*.compose.override.yaml": "dockercompose",
+		"*.compose.yaml": "dockercompose",
+		"*.docker-compose.yaml": "dockercompose",
+		"*.graphqlconfig": "json",
+		"*.mcmeta": "json",
+		"*.metadata": "yaml",
+		"*.pwsh": "powershell",
+		"*.ps1": "powershell",
+		"*.sql": "sql"
+	},
+	"editor.accessibilitySupport": "off",
+	"editor.fontFamily": "'Andale Mono', monospace",
+	"editor.fontSize": 13,
+	"editor.lineHeight": 21,
+	"editor.tabSize": 2,
+	"editor.insertSpaces": true,
+	// worwrap to 80 is a common convention for line length in code to enhance readability and support version control diffs
+	"editor.wordWrap": "bounded",
+	"editor.wordWrapColumn": 80,
+	"editor.rulers": [80],
+	"editor.cursorStyle": "line",
+	"editor.cursorWidth": 5,
+	"editor.cursorBlinking": "phase",
+	"editor.rename.enablePreview": false,
+	"editor.linkedEditing": true,
+	"editor.bracketPairColorization.enabled": true,
+	"editor.guides.bracketPairs": true,
+	"editor.find.seedSearchStringFromSelection": "selection",
+	"editor.inlineSuggest.enabled": true,
+	"editor.lightbulb.enabled": "onCode",
+	"editor.minimap.showMarkSectionHeaders": false,
+	"editor.semanticHighlighting.enabled": true,
+	"editor.suggestOnTriggerCharacters": true,
+	"editor.parameterHints.enabled": true,
+	"files.restoreUndoStack": true,
+	"files.defaultLanguage": "",
+	"files.autoSave": "onFocusChange",
+	// Ensures that every file ends with a newline. This is a common convention in many text editors and version control systems
+	// to maintain consistency and prevent issues with tools that expect a newline at the end of a file.
+	"files.insertFinalNewline": true,
+	// Automatically removes any extra spaces at the end of lines. This helps to keep the code clean and prevents unnecessary
+	// whitespace from being included in version control, which could otherwise cause diffs in the codebase.
+	"files.trimTrailingWhitespace": true,
+	"files.trimFinalNewlines": true,
+	"window.dialogStyle": "custom",
+	"window.restoreFullscreen": true,
+	"window.titleBarStyle": "custom",
+	"debug.toolBarLocation": "docked",
+	"markdown.preview.scrollEditorWithPreview": true,
+	"markdown.preview.scrollPreviewWithEditor": true,
+	"references.preferredLocation": "view",
+	"telemetry.telemetryLevel": "all",
+	"update.mode": "manual",
+
+	// git
+	"git.ignoreRebaseWarning": true,
+	"git.enableSmartCommit": true,
+	"git.confirmSync": false,
+	"git.autofetch": true,
+	"git.autoRepositoryDetection": "subFolders",
+	"git.autoStash": true,
+	// for open source projects
+	// "git.enableCommitSigning": true,
+	"git.ignoredRepositories": [".vscode"],
+	"git.inputValidationLength": 80,
+	"git.inputValidationSubjectLength": 80,
+	"git.pruneOnFetch": true,
+	"git.pullBeforeCheckout": true,
+	"git.repositoryScanMaxDepth": 4,
+	"git.scanRepositories": ["~/src"],
+	"git.timeline.showUncommitted": true,
+	"merge-conflict.autoNavigateNextConflict.enabled": true,
+	"diffEditor.codeLens": true,
+	"diffEditor.ignoreTrimWhitespace": false,
+
+	// terminal
+	"terminal.integrated.inheritEnv": true,
+	"terminal.integrated.sendKeybindingsToShell": true,
+	"terminal.integrated.fontFamily": "'Andale Mono', monospace",
+	"terminal.integrated.fontSize": 13,
+	"terminal.integrated.enableMultiLinePasteWarning": "auto",
+	"terminal.integrated.hideOnStartup": "never",
+	"terminal.integrated.scrollback": 10000,
+	"terminal.integrated.showExitAlert": false,
+	"terminal.integrated.stickyScroll.enabled": false,
+	"terminal.integrated.suggest.enabled": true,
+	"terminal.integrated.tabStopWidth": 2,
+	"terminal.integrated.tabs.focusMode": "singleClick",
+	"powershell.codeFormatting.autoCorrectAliases": true,
+	"powershell.codeFormatting.preset": "OTBS",
+	"powershell.codeFormatting.useConstantStrings": true,
+	"powershell.codeFormatting.useCorrectCasing": true,
+	"powershell.codeFormatting.whitespaceBetweenParameters": true,
+	"powershell.promptToUpdatePowerShell": false,
+
+	// formatting
+	"javascript.preferences.importModuleSpecifier": "relative",
+	"typescript.preferences.importModuleSpecifier": "relative",
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"typescript.preferGoToSourceDefinition": true,
+	// meaning only the type definitions are imported (e.g., interfaces or types)
+	//  without importing the full implementation when possible. This is helpful
+	// when you only need the type information but don't want to include the
+	// actual code or class implementation from the module.
+	"typescript.preferences.preferTypeOnlyAutoImports": true,
+	// formatting, languages and framework settings
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"html.format.wrapAttributes": "force",
+	"html.autoCreateQuotes": true,
+	"html.completion.attributeDefaultValue": "empty",
+	"html.format.indentHandlebars": true,
+	"html.format.maxPreserveNewLines": 1,
+	"html.format.templating": true,
+	"css.format.maxPreserveNewLines": 1,
+	"nxConsole.showNodeVersionOnStartup": false,
+	"python.defaultInterpreterPath": "/Users/riethmue/opt/anaconda3/envs/gamble/bin/python",
+	"css.lint.important": "warning",
+	"scss.lint.important": "warning",
+	"editor.codeActionsOnSave": {
+		"source.fixAll": "always",
+		"source.fixAll.eslint": "always",
+		"source.fixAll.markdownlint": "always",
+		"source.fixAll.sortJSON": "never",
+		"source.generate.finalModifiers": "always",
+		"source.organizeImports": "always",
+		"source.sortMembers": "always"
+	},
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		// "typescript",
+		// "typescriptreact",
+		"html",
+		"vue",
+		"markdown",
+		// "json",
+		"jsonc",
+		"yaml",
+		"yml",
+		"css",
+		// "scss",
+		"less",
+		"graphql",
+		"handlebars",
+		"ejs",
+		"svelte"
+	],
+	"prettier.arrowParens": "always",
+	"prettier.singleQuote": true,
+	"prettier.semi": true,
+	"prettier.trailingComma": "all",
+	"prettier.useTabs": true,
+	"[python]": {
+		"editor.tabSize": 4
+	},
+	"[dockerfile]": {
+		"editor.defaultFormatter": "ms-azuretools.vscode-docker"
+	},
+
+	// emmet
+	"emmet.includeLanguages": {
+		"html": "html",
+		// "css": "css",
+		// "scss": "scss",
+		// "less": "less",
+		// "sass": "sass",
+		// "json": "json",
+		// "jsonc": "json",
+		"xml": "xml"
+		// "plaintext": "plaintext",
+		// "markdown": "markdown"
+	},
+	"emmet.preferences": {},
+	"emmet.triggerExpansionOnTab": true,
+
+	// extention settings
+	"indentRainbow.includedLanguages": [],
+	// colors with new opacity optimized for darkmode
+	"indentRainbow.colors": [
+		"rgba(255,255,64,0.15)", // Yellow
+		"rgba(127,255,127,0.15)", // Green
+		"rgba(255,127,255,0.15)", // Pink
+		"rgba(79,236,236,0.15)", // Turquoise
+		"rgba(255,99,71,0.15)", // Tomato Red
+		"rgba(173,216,230,0.15)", // Light Blue
+		"rgba(221,160,221,0.15)", // Plum
+		"rgba(240,230,140,0.15)", // Khaki
+		"rgba(144,238,144,0.15)", // Light Green
+		"rgba(255,182,193,0.15)", // Light Pink
+		"rgba(70,130,180,0.15)", // Steel Blue
+		"rgba(186,85,211,0.15)" // Orchid
+	],
+	"mssql.connections": [
+		{
+			"server": "localhost,1433",
+			"database": "",
+			"authenticationType": "SqlLogin",
+			"user": "sa",
+			"password": "",
+			"emptyPasswordInput": false,
+			"savePassword": true,
+			"encrypt": "Mandatory",
+			"trustServerCertificate": true,
+			"connectTimeout": 15,
+			"commandTimeout": 30,
+			"applicationName": "vscode-mssql"
+		}
+	],
+	"turboConsoleLog.logMessagePrefix": "👊🏻",
+	"turboConsoleLog.includeFileNameAndLineNum": true,
+	"turboConsoleLog.addSemicolonInTheEnd": true,
+	"svgPreview.autoOpen": true,
+	// vscode-icon extension
+	"workbench.iconTheme": "vscode-icons",
+	"gitlens.codeLens.scopes": ["document"],
+	"gitlens.defaultDateFormat": "DD.MM.YY HH:mm",
+	"gitlens.currentLine.format": "${id} ${author} ${message|20?}·${date}",
+	"gitlens.plusFeatures.enabled": false,
+	"gitlens.showWhatsNewAfterUpgrades": false,
+	"gitlens.views.searchAndCompare.files.layout": "tree",
+	"codesnap.containerPadding": "1em",
+	"codesnap.realLineNumbers": true,
+	"codesnap.showWindowTitle": true,
+	"codesnap.shutterAction": "copy",
+	"codesnap.transparentBackground": true,
+	"cSpell.userWords": ["esbenp", "riethmue", "Riethmüller"],
+	"gitProjectManager.baseProjectsFolders": ["~/src"],
+	"gitProjectManager.ignoredFolders": [
+		"build",
+		"deps",
+		"dist",
+		"docs",
+		"node_modules"
+	],
+	"gitProjectManager.storeRepositoriesBetweenSessions": true,
+	"gitmoji.showEmojiCode": true,
+	"hungryDelete.keepOneSpace": true,
+	"liveshare.featureSet": "insiders",
+	"liveshare.showInStatusBar": "whileCollaborating",
+	// "npm.packageManager": "bun",
+	// "typescript.npm": "/home/nato/.asdf/shims/bun",
+	"sortJSON.contextMenu": {
+		"sortJSON": true,
+		"sortJSONAlphaNum": false,
+		"sortJSONAlphaNumReverse": false,
+		"sortJSONKeyLength": false,
+		"sortJSONKeyLengthReverse": false,
+		"sortJSONReverse": false,
+		"sortJSONType": false,
+		"sortJSONTypeReverse": false,
+		"sortJSONValues": false,
+		"sortJSONValuesReverse": false
+	},
+	// "vim.easymotion": true,
+
+	// performance
+	"files.watcherExclude": {
+		"**/.git/objects/**": true,
+		"**/.git/submodules/**": true,
+		"**/node_modules/**": true,
+		"**/.vscode/**": true
+	},
+	"search.exclude": {
+		"**/node_modules": true,
+		"**/.git": true,
+		"**/.vscode": true
+	},
+	"files.exclude": {
+		"**/.git": true
+		// "**/.vscode": true
+	},
+
+	// intellisense & suggestions
+	"vsintellicode.modify.editor.suggestSelection": "enabled",
+	"editor.suggestSelection": "first",
+	"editor.quickSuggestions": {
+		"other": true,
+		"comments": true,
+		"strings": false
+	},
+	"editor.wordBasedSuggestions": "allDocuments",
+	// do not interupt on commit signs (e.g. . , ; space)
+	"editor.tabCompletion": "on",
+	"editor.acceptSuggestionOnEnter": "off",
+	"editor.acceptSuggestionOnCommitCharacter": false,
+
+	// screencast
+	"screencastMode.fontSize": 40,
+	"screencastMode.verticalOffset": 5,
+	"workbench.colorTheme": "Activate UMBRA protocol",
+	"chat.commandCenter.enabled": false
+}
