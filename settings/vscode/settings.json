@@ -47,7 +47,8 @@
 		"*.metadata": "yaml",
 		"*.pwsh": "powershell",
 		"*.ps1": "powershell",
-		"*.sql": "sql"
+		"*.sql": "sql",
+		"CODEOWNERS": "CODEOWNERS"
 	},
 	"editor.accessibilitySupport": "off",
 	"editor.fontFamily": "'Andale Mono', monospace",
