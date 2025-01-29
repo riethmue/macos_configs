@@ -1,7 +1,6 @@
 # Configure Homebrew environment by setting paths (e.g., PATH, MANPATH, INFOPATH)
 # so Homebrew and its installed tools work properly in the shell.
 eval "$(/opt/homebrew/bin/brew shellenv)"
-
 # configuration
 # HINT: use command macos_configs_reset for new configuration
 if [[ ! -f "$HOME/.macos_configs_initalized" ]]; then

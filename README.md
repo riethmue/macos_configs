@@ -2,12 +2,23 @@
 
 It's just beautiful to have all settings and configurations in a special .git repo. 😍
 
-## Applications
+## Dependencies
 
-- vscode
-- ranger
-- tmux
-- zsh
+```
+install homebrew (see official docs)
+install oh-my-zsh (see official docs)
+
+brew install zsh
+brew install tmux
+brew install ranger
+bew install zsh-syntax-highlighting
+brew install zsh-autosuggestions
+brew install fuck
+```
+
+## Other dependencies
+
+Please see `.zshenv` for further dependencies like nvm etc. Adapt this file for your needs before using this configuration!
 
 ## Stow
 

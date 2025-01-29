@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# homebrew
+PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
 # manpages
 export MANPATH="/usr/local/man:$MANPATH"
 
@@ -9,9 +12,6 @@ export MANPATH="/usr/local/man:$MANPATH"
 
 # miniconda
 export PATH="$HOME/miniconda3/bin:$PATH"
-
-# homebrew
-PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"

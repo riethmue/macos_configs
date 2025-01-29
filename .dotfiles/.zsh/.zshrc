@@ -17,7 +17,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
   bgnotify
   zsh-syntax-highlighting
-  zsh-autosuggestions # accept with right arrow
+  zsh-autosuggestions
   thefuck
   nvm
   tmux
