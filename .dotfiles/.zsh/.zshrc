@@ -83,3 +83,5 @@ alias ranger="ranger_cd"
 alias kill_process="kill_process"
 # reset configuration
 alias macos_configs_reset="rm -f ~/.macos_configs_initalized && echo 'Configuration reset. It will run again on next terminal start.'"
+# print system information
+alias system_info="system_profiler SPSoftwareDataType SPHardwareDataType"

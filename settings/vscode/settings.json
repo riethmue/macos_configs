@@ -39,9 +39,10 @@
 	"files.associations": {
 		"*.appxmanifest": "xml",
 		"*.ash": "shellscript",
-		"*.compose.override.yaml": "dockercompose",
 		"*.compose.yaml": "dockercompose",
 		"*.docker-compose.yaml": "dockercompose",
+		"*.yaml": "azure-pipelines",
+		"*.yml": "azure-pipelines",
 		"*.graphqlconfig": "json",
 		"*.mcmeta": "json",
 		"*.metadata": "yaml",
@@ -140,6 +141,7 @@
 	"typescript.preferences.importModuleSpecifier": "relative",
 	"typescript.updateImportsOnFileMove.enabled": "always",
 	"typescript.preferGoToSourceDefinition": true,
+	"typescript.tsdk": "node_modules/typescript/lib",
 	// meaning only the type definitions are imported (e.g., interfaces or types)
 	//  without importing the full implementation when possible. This is helpful
 	// when you only need the type information but don't want to include the
@@ -198,6 +200,9 @@
 	},
 	"[dockerfile]": {
 		"editor.defaultFormatter": "ms-azuretools.vscode-docker"
+	},
+	"[azure-pipelines]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 
 	// emmet
