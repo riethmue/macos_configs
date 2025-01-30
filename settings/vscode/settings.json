@@ -195,27 +195,34 @@
   // Convert tabs to spaces for files
   // `insertSpaces: false` ensures real tabs are used instead of spaces
   // `tabSize: 4` sets the tab size to 4 spaces (can be adjusted)
+  "prettier.tabWidth": 2,
   "prettier.useTabs": false,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
   "python.defaultInterpreterPath": "~/miniconda3/bin/python",
   "[python]": {
-    "prettier.useTabs": true
+    "prettier.useTabs": true,
+    "prettier.tabWidth": 4,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": false
   },
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[azure-pipelines]": {
+    "editor.autoIndent": "none"
   },
 
   // emmet
   "emmet.includeLanguages": {
     "html": "html",
-    // "css": "css",
-    // "scss": "scss",
-    // "less": "less",
-    // "sass": "sass",
-    // "json": "json",
-    // "jsonc": "json",
-    "xml": "xml"
-    // "plaintext": "plaintext",
-    // "markdown": "markdown"
+    "css": "css",
+    "scss": "scss",
+    "less": "less",
+    "sass": "sass",
+    "json": "json",
+    "xml": "xml",
+    "markdown": "markdown"
   },
   "emmet.preferences": {},
   "emmet.triggerExpansionOnTab": true,
@@ -257,7 +264,6 @@
   "turboConsoleLog.includeFileNameAndLineNum": true,
   "turboConsoleLog.addSemicolonInTheEnd": true,
   "svgPreview.autoOpen": true,
-  // vscode-icon extension
   "workbench.iconTheme": "vscode-icons",
   "gitlens.codeLens.scopes": ["document"],
   "gitlens.defaultDateFormat": "DD.MM.YY HH:mm",
@@ -270,7 +276,7 @@
   "codesnap.showWindowTitle": true,
   "codesnap.shutterAction": "copy",
   "codesnap.transparentBackground": true,
-  "cSpell.userWords": ["esbenp", "riethmue", "Riethmüller"],
+  "cSpell.userWords": ["esbenp", "riethmue", "Riethmüller", "tauri"],
   "gitProjectManager.baseProjectsFolders": ["~/src"],
   "gitProjectManager.ignoredFolders": [
     "build",
