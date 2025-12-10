@@ -1,81 +1,125 @@
-# macos_configs
+# macOS Configs 🍎
 
-It's just beautiful to have all settings and configurations in a special .git repo. 😍
+> Personal macOS development environment configurations managed with Git and GNU Stow
 
-## Dependencies
+Keep your dotfiles, editor settings, and shell configurations organized, versioned, and easily deployable across machines.
 
+## 📦 What's Included
+
+- **Shell Configuration**: zsh with oh-my-zsh, custom aliases, and plugins
+- **Terminal Multiplexer**: tmux configuration
+- **File Manager**: ranger configuration
+- **Editor Settings**: VS Code settings and keybindings
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+First, install Homebrew and oh-my-zsh:
+
+```bash
+# Install Homebrew (see https://brew.sh)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Install oh-my-zsh (see https://ohmyz.sh)
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
-install homebrew (see official docs)
-install oh-my-zsh (see official docs)
 
+### Install Dependencies
+
+```bash
 brew install zsh
 brew install tmux
 brew install ranger
-bew install zsh-syntax-highlighting
+brew install zsh-syntax-highlighting
 brew install zsh-autosuggestions
-brew install fuck
-```
-
-## Other dependencies
-
-Please see `.zshenv` for further dependencies like nvm etc. Adapt this file for your needs before using this configuration!
-
-## Stow
-
-Create symbolic links for config files.
-
-### create stow-local-ignore
-
-(macOS creates .DS_Store files for indexing (e.g. for use in Spotlight Search, Finder), and these will keep popping up in your folders. In order to circumvent this situation, we can use the file Stow uses to identify locally ignored files in order to avoid unexpected symlinks.)
-
-```
+brew install thefuck
 brew install stow
+```
+
+### Additional Dependencies
+
+⚠️ **Important**: Review `.zshenv` for additional dependencies like `nvm`, `node`, etc. Adapt this file to your needs before using this configuration!
+
+## 🔗 Setting Up Symlinks with Stow
+
+GNU Stow creates symlinks from this repository to their target locations, making it easy to manage your configs in one place.
+
+### 1. Prepare Stow
+
+macOS creates `.DS_Store` files that can interfere with stow. Create a global ignore file:
+
+```bash
 cd ~
-touch .stow-global-ignoredockerignore
+touch .stow-local-ignore
 echo "\.DS_Store" >> .stow-local-ignore
 ```
 
-### create simlinks
+### 2. Create Symlinks
 
-CAUTION: before creating simlinks delete existing configuration files from your system!
+⚠️ **CAUTION**: Backup and delete existing configuration files before creating symlinks!
 
-#### 1. creating simlinks for all files in a dir to home directory e.g. for .zsh
+#### Zsh Configuration
+
+```bash
+cd /path/to/macos_configs/.dotfiles/.zsh
+stow -v --target=$HOME .
+```
+
+Expected output:
 
 ```
-[macos_configs] cd .dotfiles/.zsh
-[.zsh] stow -v --target=$HOME .
 LINK: .zlogin => src/personal/macos_configs/.dotfiles/.zsh/.zlogin
 LINK: .zprofile => src/personal/macos_configs/.dotfiles/.zsh/.zprofile
 LINK: .zshenv => src/personal/macos_configs/.dotfiles/.zsh/.zshenv
 LINK: .zshrc => src/personal/macos_configs/.dotfiles/.zsh/.zshrc
 ```
 
-Note: ls -a will show simlinks a normal list-item. in finder it's described as "alias" and _not_ as "document"
+#### VS Code Settings
 
-#### 2. create simlinks for all files in a dir to specifc dir (e.g. for vscode settings)
+```bash
+cd /path/to/macos_configs/settings/vscode
+stow -v --target="$HOME/Library/Application Support/Code/User" .
+```
+
+Expected output:
 
 ```
-[macos_configs] cd .dotfiles/settings/vscode
-[vscode] stow -v --target="$HOME/Library/Application Support/Code/User" .
 LINK: keybindings.json => ../../../../src/personal/macos_configs/settings/vscode/keybindings.json
 LINK: settings.json => ../../../../src/personal/macos_configs/settings/vscode/settings.json
 ```
 
-## zsh config files
+> **Note**: Symlinks appear as normal files with `ls -a`. In Finder, they're labeled as "alias" rather than "document".
 
-.zprofile
-.zlogin and .zprofile are basically the same thing - they set the environment for login shells; they just get loaded at different times. .zprofile is based on the Bash's .bash_profile while .zlogin is a derivative of CSH's .login. Since Bash was the default shell for everything up to Mojave, stick with .zprofile.
+## 📚 Understanding Zsh Config Files
 
-.zshrc
-This sets the environment for interactive shells. This gets loaded after .zprofile. It's typically a place where you "set it and forget it" type of parameters like $PATH, $PROMPT, aliases, and functions you would like to have in both login and interactive shells.
+### `.zprofile`
 
-.zshenv (Optional)
-This is read first and read every time. This is where you set environment variables. I say this is optional because is geared more toward advanced users where having your $PATH, $PAGER, or $EDITOR variables may be important for things like scripts that get called by launchd. Those run under a non-interactive shell so anything in .zprofile or .zshrc won't get loaded.
+Sets the environment for login shells. Based on Bash's `.bash_profile`. This is the recommended file to use since Bash was the default shell up to macOS Mojave.
 
-.zlogout (Optional)
-But very useful! This is read when you log out of a session and is very good for cleaning things up when you leave (like resetting the Terminal Window Title).
+### `.zshrc`
 
-## Bonus tips
+Loaded after `.zprofile` for interactive shells. The primary location for `$PATH`, `$PROMPT`, aliases, and functions you want available in both login and interactive shells.
 
-- vscode settings path on macOS: `cd ~/Library/Application\ Support/Code/User`
-- see `.zshenv`for useful zsh commands (aliases)
+### `.zshenv` (Optional)
+
+Read first and on every shell invocation. Use for environment variables needed by non-interactive shells (e.g., scripts called by `launchd`). Important for advanced users who need `$PATH`, `$PAGER`, or `$EDITOR` in all contexts.
+
+### `.zlogout` (Optional)
+
+Executed when logging out of a session. Useful for cleanup tasks like resetting the terminal window title.
+
+## 💡 Tips & Tricks
+
+- **VS Code settings location**: `~/Library/Application Support/Code/User`
+- **Custom aliases**: Check `.zshenv` for useful zsh commands and aliases
+- **Updating configs**: Edit files in this repo, changes are reflected immediately via symlinks
+- **New machine setup**: Clone this repo and run the stow commands above
+
+## 🤝 Contributing
+
+This is a personal configuration repository, but feel free to fork it and adapt it to your needs!
+
+## 📝 License
+
+Feel free to use these configurations however you like.
