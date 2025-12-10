@@ -49,6 +49,8 @@
     "*.pwsh": "powershell",
     "*.ps1": "powershell",
     "*.sql": "sql",
+    "*.tf": "terraform",
+    "*.tfvars": "terraform",
     "CODEOWNERS": "CODEOWNERS"
   },
   "editor.accessibilitySupport": "off",
@@ -60,7 +62,7 @@
   "editor.wordWrapColumn": 80,
   "editor.rulers": [80],
   "editor.cursorStyle": "line",
-  "editor.cursorWidth": 5,
+  "editor.cursorWidth": 3,
   "editor.cursorBlinking": "phase",
   "editor.rename.enablePreview": false,
   "editor.linkedEditing": true,
@@ -91,7 +93,9 @@
   "markdown.preview.scrollPreviewWithEditor": true,
   "references.preferredLocation": "view",
   "telemetry.telemetryLevel": "all",
-  "update.mode": "manual",
+  "update.mode": "default",
+  "extensions.autoCheckUpdates": true,
+  "extensions.autoUpdate": true
 
   // git
   "git.ignoreRebaseWarning": true,
@@ -144,7 +148,7 @@
   //  without importing the full implementation when possible. This is helpful
   // when you only need the type information but don't want to include the
   // actual code or class implementation from the module.
-  "typescript.preferences.preferTypeOnlyAutoImports": true,
+  "typescript.preferences.preferTypeOnlyAutoImports": false,
   // formatting, languages and framework settings
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
@@ -164,24 +168,24 @@
     "source.fixAll.markdownlint": "always",
     "source.fixAll.sortJSON": "never",
     "source.generate.finalModifiers": "always",
-    "source.organizeImports": "always",
+    // "source.organizeImports": "always",
     "source.sortMembers": "always"
   },
   "eslint.validate": [
     "javascript",
     "javascriptreact",
-    // "typescript",
-    // "typescriptreact",
+    "typescript",
+    "typescriptreact",
     "html",
     "vue",
     "markdown",
-    // "json",
+    "json",
     "jsonc",
     "yaml",
     "yml",
     "yml",
     "css",
-    // "scss",
+    "scss",
     "less",
     "graphql",
     "handlebars",
@@ -210,9 +214,28 @@
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
   "[azure-pipelines]": {
-    "editor.autoIndent": "none"
+    "editor.autoIndent": "none",
+    "editor.formatOnSave": true
   },
-
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
   // emmet
   "emmet.includeLanguages": {
     "html": "html",
@@ -276,7 +299,7 @@
   "codesnap.showWindowTitle": true,
   "codesnap.shutterAction": "copy",
   "codesnap.transparentBackground": true,
-  "cSpell.userWords": ["esbenp", "riethmue", "Riethmüller", "tauri"],
+  "cSpell.userWords": ["esbenp", "riethmue", "Riethmüller", "Spatic", "tauri"],
   "gitProjectManager.baseProjectsFolders": ["~/src"],
   "gitProjectManager.ignoredFolders": [
     "build",
@@ -342,5 +365,9 @@
   "screencastMode.verticalOffset": 5,
   "workbench.colorTheme": "Activate UMBRA protocol",
   "chat.commandCenter.enabled": false,
-  "editor.renderWhitespace": "none"
+  "editor.renderWhitespace": "none",
+  "gitlens.rebaseEditor.ordering": "asc",
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "docker.extension.enableComposeLanguageServer": false,
+  "chat.mcp.gallery.enabled": true
 }

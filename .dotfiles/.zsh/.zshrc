@@ -46,6 +46,12 @@ complete -o nospace -C /opt/homebrew/bin/terraform terraform
 # bun completions
 [ -s "/Users/riethmue/.bun/_bun" ] && source "/Users/riethmue/.bun/_bun"
 
+# manual load nvm to use default node version
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+nvm use default &> /dev/null
 
 # functions
 ranger_cd() {
@@ -85,3 +91,5 @@ alias kill_process="kill_process"
 alias macos_configs_reset="rm -f ~/.macos_configs_initalized && echo 'Configuration reset. It will run again on next terminal start.'"
 # print system information
 alias system_info="system_profiler SPSoftwareDataType SPHardwareDataType"
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+eval "$(direnv hook zsh)"
