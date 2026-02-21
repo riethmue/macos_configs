@@ -42,9 +42,9 @@ if [[ ! -f "$HOME/.macos_configs_initalized" ]]; then
 
 
 		# Add all SSH private keys (robust, silent when no files)
-		for key rin "$HOME"/.ssh/*(.N); do
-			[[ "$key" == *.pub ]] && continue
-			ssh-add "$key" >/dev/null 2>&1 || true
+		setopt local_options null_glob
+		for key in "$HOME"/.ssh/*; do
+			[[ -f "$key" && "$key" != *.pub ]] && ssh-add "$key" >/dev/null 2>&1 || true
 		done
 
 
