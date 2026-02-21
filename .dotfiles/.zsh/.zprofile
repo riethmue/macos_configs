@@ -1,14 +1,18 @@
 # Configure Homebrew environment by setting paths (e.g., PATH, MANPATH, INFOPATH)
 # so Homebrew and its installed tools work properly in the shell.
-eval "$(/opt/homebrew/bin/brew shellenv)"
+
+if command -v brew >/dev/null 2>&1; then
+  eval "$(brew shellenv)"
+elif [ -x /opt/homebrew/bin/brew ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # configuration
 # HINT: use command macos_configs_reset for new configuration
 if [[ ! -f "$HOME/.macos_configs_initalized" ]]; then
     # greeting
     echo "Hi, $USER!"
     echo "You got a really beautiful configuration 💻✨"
-    echo "Hacker Mode: Activated 🦾"
-    echo "Made with ♥ by https://github.com/riethmue"
     echo "Starting your macOS configuration... 🚀"
     echo "If you ever want to restart the configuration, use command: macos_configs_reset"
 
@@ -36,12 +40,13 @@ if [[ ! -f "$HOME/.macos_configs_initalized" ]]; then
         return 1
     fi
 
-    # Add all SSH private keys
-    for key in ~/.ssh/*; do
-        if [[ -f "$key" && "$key" != *.pub ]]; then
-            ssh-add "$key" > /dev/null 2>&1
-        fi
-    done
+
+		# Add all SSH private keys (robust, silent when no files)
+		for key rin "$HOME"/.ssh/*(.N); do
+			[[ "$key" == *.pub ]] && continue
+			ssh-add "$key" >/dev/null 2>&1 || true
+		done
+
 
     # Mark the configuration as initialized
     touch ~/.macos_configs_initalized

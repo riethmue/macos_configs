@@ -13,17 +13,21 @@ ZSH_THEME="wedisagree"
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 COMPLETION_WAITING_DOTS="true"
 
+source $ZSH/oh-my-zsh.sh
+
+[[ -r /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]] \
+  && source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+[[ -r /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] \
+  && source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # Which plugins would you like to load?
 plugins=(
   bgnotify
-  zsh-syntax-highlighting
-  zsh-autosuggestions
   thefuck
   nvm
   tmux
 )
-
-source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then

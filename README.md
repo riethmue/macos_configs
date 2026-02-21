@@ -1,8 +1,8 @@
 # macOS Configs 🍎
 
-> Personal macOS development environment configurations managed with Git and GNU Stow
+> My personal macOS development environment configurations managed with Git and GNU Stow
 
-Keep your dotfiles, editor settings, and shell configurations organized, versioned, and easily deployable across machines.
+Keep my dotfiles, editor settings, and shell configurations organized, versioned, and easily deployable across machines.
 
 ## 📦 What's Included
 
@@ -35,6 +35,7 @@ brew install zsh-syntax-highlighting
 brew install zsh-autosuggestions
 brew install thefuck
 brew install stow
+brew install direnv
 ```
 
 ### Additional Dependencies
@@ -115,11 +116,3 @@ Executed when logging out of a session. Useful for cleanup tasks like resetting 
 - **Custom aliases**: Check `.zshenv` for useful zsh commands and aliases
 - **Updating configs**: Edit files in this repo, changes are reflected immediately via symlinks
 - **New machine setup**: Clone this repo and run the stow commands above
-
-## 🤝 Contributing
-
-This is a personal configuration repository, but feel free to fork it and adapt it to your needs!
-
-## 📝 License
-
-Feel free to use these configurations however you like.
